@@ -1,0 +1,14 @@
+---
+- name: call all child playbooks
+  hosts: all
+  tasks:
+    - name: call all child playbooks
+      include: "{{item}}"
+      with_items:
+        - t9-apt.yml  
+        - t9-copy.yml  
+        - t9-port.yml  
+        - t9-restart.yml  
+        - t9-pause.yml  
+        - t9-uri.yml                    
+...
